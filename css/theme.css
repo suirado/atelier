@@ -1,0 +1,218 @@
+/* =========================================================
+   Atelier — light and dark colours
+   Loaded after the other style sheets on every page.
+   Dark mode: warm charcoal (like walnut in low light), not inverted
+   colours. Buttons use a lifted spruce green; text links a pale
+   green so they keep 4.5:1 contrast on dark.
+   ========================================================= */
+
+:root {
+  --color-primary-text: #1f4d43;
+  --color-primary-soft: #edf4f1;
+  --color-danger: #b91c1c;
+  --color-danger-soft: #fdecec;
+  --color-border-strong: #d6cbbb;
+  --color-subtle: #8a837c;
+  --color-glass: rgba(255, 255, 255, 0.94);
+  --color-canvas: #f6f1ea;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: #171412;     /* warm charcoal */
+  --color-surface: #221e1b;        /* cards, panels */
+  --color-tinted: #1d1916;         /* alternating sections */
+  --color-foreground: #f3ede6;     /* 15:1 on background */
+  --color-muted: #b9afa4;          /* 8.6:1 */
+  --color-subtle: #93897f;         /* 5.4:1, icons and hints */
+  --color-border: #38312c;
+  --color-border-strong: #4c433c;
+  --color-ink: #0f0d0c;            /* dark sections sit a step darker */
+
+  --color-primary: #2b6656;        /* buttons: white text 6.4:1, still stands out on charcoal */
+  --color-primary-edge: #173b33;
+  --color-primary-text: #8cc7b4;   /* 9.5:1 on background */
+  --color-primary-soft: #1b2925;
+  --color-danger: #f87171;
+  --color-danger-soft: #3a1d1d;
+  --color-glass: rgba(34, 30, 27, 0.94);
+  --color-canvas: #1b1816;
+
+  --tone-sand: #3a3023;
+  --tone-clay: #3d2a22;
+  --tone-sage: #27322a;
+  --tone-stone: #2d2b28;
+  --tone-sand-ink: #e5c48f;
+  --tone-clay-ink: #f3a07a;
+  --tone-sage-ink: #a7c9a9;
+  --tone-stone-ink: #cfc8c0;
+}
+
+/* Theme button in the top bar */
+.theme-toggle {
+  width: 44px; height: 44px; flex-shrink: 0;
+  display: inline-grid; place-items: center;
+  border: 1px solid var(--color-border); border-radius: 50%;
+  background: var(--color-surface); color: var(--color-foreground);
+  cursor: pointer; transition: border-color 0.2s, transform 0.2s var(--spring);
+}
+.theme-toggle:hover { border-color: var(--color-border-strong); transform: rotate(-12deg); }
+.theme-toggle:focus-visible { outline: 2px solid var(--color-primary-text); outline-offset: 2px; }
+.theme-toggle .icon { width: 20px; height: 20px; }
+.theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; color: #fbbf24; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.nav .theme-toggle, .editor-bar .theme-toggle { margin-right: 0.5rem; }
+.auth-top .theme-toggle { margin-left: auto; }
+.theme-switching, .theme-switching * { transition: none !important; }
+
+/* Language button (js/i18n.js): same size as the theme button, the other language's two letters */
+.lang-toggle {
+  width: 44px; height: 44px; flex-shrink: 0;
+  display: inline-grid; place-items: center;
+  border: 1px solid var(--color-border); border-radius: 50%;
+  background: var(--color-surface); color: var(--color-foreground);
+  font: 700 0.78rem/1 var(--font, inherit); letter-spacing: 0.04em;
+  cursor: pointer; transition: border-color 0.2s, background-color 0.2s;
+}
+.lang-toggle:hover { border-color: var(--color-border-strong); background: var(--color-surface-alt, var(--color-surface)); }
+.lang-toggle:focus-visible { outline: 2px solid var(--color-primary-text); outline-offset: 2px; }
+.nav .lang-toggle, .editor-bar .lang-toggle { margin-right: 0.4rem; }
+.auth-top .lang-toggle { margin-left: auto; margin-right: 0.4rem; }
+.auth-top .lang-toggle + .theme-toggle { margin-left: 0; }
+
+/* ---------- Where you shop: a pill like the account button, opening a list of countries ---------- */
+.region-pick { position: relative; flex-shrink: 0; margin-right: 0.5rem; }
+.region-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  height: 44px; padding: 0 0.6rem 0 0.75rem;
+  border: 1px solid var(--color-border); border-radius: 999px;
+  background: var(--color-surface); color: var(--color-foreground);
+  font: 700 0.85rem/1 var(--font, inherit); letter-spacing: 0.03em; cursor: pointer;
+  box-shadow: 0 2px 0 var(--color-border);
+  transition: box-shadow 0.25s var(--spring, ease), transform 0.25s var(--spring, ease), border-color 0.2s;
+}
+.region-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--color-border), 0 10px 18px -12px rgba(41, 37, 36, 0.4); }
+.region-btn:focus-visible { outline: 2px solid var(--color-primary-text); outline-offset: 2px; }
+.region-btn .icon { width: 18px; height: 18px; }
+.region-btn .chevron { width: 15px; height: 15px; color: var(--color-muted); transition: transform 0.3s var(--spring, ease); }
+.region-btn[aria-expanded="true"] { border-color: var(--color-border-strong); }
+.region-btn[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+
+.region-menu {
+  position: absolute; right: 0; top: calc(100% + 10px); z-index: 70;
+  width: 272px; padding: 0.45rem;
+  border-radius: var(--radius-md, 16px); background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 24px 44px -22px rgba(41, 37, 36, 0.5);
+  animation: region-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-origin: top right;
+}
+.region-menu[hidden] { display: none; }
+@keyframes region-in { from { opacity: 0; transform: translateY(-6px) scale(0.98); } }
+.region-head { display: grid; gap: 0.15rem; margin: 0; padding: 0.55rem 0.65rem 0.7rem; border-bottom: 1px solid var(--color-border); margin-bottom: 0.35rem; }
+.region-head strong { font-size: 0.92rem; }
+.region-head span { font-size: 0.78rem; color: var(--color-muted); }
+.region-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; outline: none; }
+.region-option {
+  display: grid; grid-template-columns: auto 1fr auto 18px; align-items: center; gap: 0.65rem;
+  min-height: 46px; padding: 0 0.6rem; border-radius: 12px; cursor: pointer;
+  transition: background-color 0.15s;
+}
+.region-option.is-active { background: var(--color-tinted); }
+.region-list:focus-visible .region-option.is-active { box-shadow: inset 0 0 0 2px var(--color-primary-text); }
+.region-badge {
+  width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--color-tinted); border: 1px solid var(--color-border);
+  font: 800 0.68rem/1 var(--font, inherit); letter-spacing: 0.04em; color: var(--color-muted);
+}
+.region-name { display: grid; gap: 0.12rem; font-weight: 650; font-size: 0.9rem; line-height: 1.15; }
+.region-name small { font-weight: 500; font-size: 0.72rem; color: var(--color-muted); letter-spacing: 0.04em; }
+.region-cur { min-width: 2.2rem; text-align: right; font-weight: 700; font-size: 0.85rem; color: var(--color-muted); }
+.region-check { width: 18px; height: 18px; color: var(--color-primary-text); opacity: 0; }
+.region-option[aria-selected="true"] .region-badge { background: linear-gradient(160deg, #2f6a5b, var(--color-primary)); border-color: transparent; color: #fff; }
+.region-option[aria-selected="true"] .region-check { opacity: 1; }
+.region-option[aria-selected="true"] .region-name { color: var(--color-primary-text); }
+@media (max-width: 480px) {                 /* phones: a round globe button like the theme one; the list stays inside the screen */
+  .region-btn { width: 44px; padding: 0; justify-content: center; }
+  .region-btn .region-code, .region-btn .chevron { display: none; }
+  .region-menu { position: fixed; left: 12px; right: 12px; top: 64px; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .region-btn:hover { transform: none; } .region-menu { animation: none; } }
+
+
+@media (prefers-reduced-motion: reduce) { .theme-toggle:hover { transform: none; } }
+
+/* ---------- Dark: landing page ---------- */
+[data-theme="dark"] .hero-glow,
+[data-theme="dark"] .hero::before { opacity: 0.18; }
+[data-theme="dark"] .feature,
+[data-theme="dark"] .step { background: linear-gradient(180deg, #24201d, #1f1b18); }
+[data-theme="dark"] .home-style { background: rgba(23, 28, 26, 0.88); color: #eef3f0; }
+[data-theme="dark"] .v-paper { fill: #2a2521; }
+[data-theme="dark"] .v-outline { stroke: #b9afa4; }
+[data-theme="dark"] .feature-icon.tone-sand, [data-theme="dark"] .row-swatch.tone-sand { background: linear-gradient(145deg, #463a28, #3a3023); }
+[data-theme="dark"] .feature-icon.tone-clay, [data-theme="dark"] .row-swatch.tone-clay { background: linear-gradient(145deg, #4a3127, #3d2a22); }
+[data-theme="dark"] .feature-icon.tone-sage, [data-theme="dark"] .row-swatch.tone-sage { background: linear-gradient(145deg, #303d33, #27322a); }
+[data-theme="dark"] .feature-icon.tone-stone, [data-theme="dark"] .row-swatch.tone-stone { background: linear-gradient(145deg, #383531, #2d2b28); }
+[data-theme="dark"] .stars { color: #fbbf24; }
+[data-theme="dark"] .tool:hover { background: rgba(255, 255, 255, 0.06); }
+[data-theme="dark"] .sort-toggle { background: #1d1916; }
+[data-theme="dark"] .sort-btn[aria-pressed="true"] { background: var(--color-surface); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+[data-theme="dark"] .row-buy { background: var(--color-primary-soft); }
+[data-theme="dark"] .row-detail, [data-theme="dark"] .row-more { background: #1d1a17; }
+[data-theme="dark"] .tag:not(.is-highlighted):not(.dim-tag) { background: rgba(34, 30, 27, 0.92); border-color: rgba(255, 255, 255, 0.12); }
+[data-theme="dark"] .btn-light { --btn-bg: #f3ede6; --btn-edge: #b9afa4; }
+
+[data-theme="dark"] .plan-card {
+  background:
+    linear-gradient(180deg, #24201d, #1e1a17) padding-box,
+    linear-gradient(140deg, rgba(47, 106, 91, 0.55), #38312c 35%, #38312c 65%, rgba(79, 122, 82, 0.45)) border-box;
+  box-shadow: 0 50px 90px -45px rgba(0, 0, 0, 0.7), 0 18px 36px -24px rgba(0, 0, 0, 0.5);
+}
+[data-theme="dark"] .tools { background: #171412; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4); }
+[data-theme="dark"] .inspector { background: linear-gradient(180deg, #1f1b18, #1b1815); }
+[data-theme="dark"] .demo-view { background: #1b1816; }
+[data-theme="dark"] .demo-stage::before { background: linear-gradient(160deg, #24201d, #1b1816); }
+[data-theme="dark"] .demo-status, [data-theme="dark"] .demo-cams { background: var(--color-glass); }
+
+/* ---------- Dark: sign-in pages ---------- */
+[data-theme="dark"] .art-card { background: rgba(34, 30, 27, 0.88); border-color: rgba(255, 255, 255, 0.1); }
+
+/* ---------- Dark: planner and projects ---------- */
+[data-theme="dark"] .canvas-wrap { background: var(--color-canvas); }
+[data-theme="dark"] .canvas-wrap[data-mode="3d"] { background: #1b1816; }
+[data-theme="dark"] .grid-minor { stroke: rgba(243, 237, 230, 0.05); }
+[data-theme="dark"] .grid-major { stroke: rgba(243, 237, 230, 0.11); }
+/* Rooms keep their light paper colours, like a lit plan on a dark desk, so labels stay dark on light */
+[data-theme="dark"] .item-label { fill: #44403c; }
+[data-theme="dark"] .seg-btn[aria-pressed="true"],
+[data-theme="dark"] .panel-tab[aria-selected="true"] { background: #3d3530; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45); }
+[data-theme="dark"] .cat-chip[aria-pressed="true"] { background: var(--color-primary-soft); border-color: rgba(140, 199, 180, 0.45); color: var(--color-primary-text); }
+[data-theme="dark"] .size-preset[aria-pressed="true"] { background: var(--color-primary-soft); border-color: rgba(140, 199, 180, 0.45); color: var(--color-primary-text); }
+[data-theme="dark"] .cat-groups { background: #1d1916; }
+[data-theme="dark"] .cat-group[aria-pressed="true"] { background: #3d3530; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45); }
+[data-theme="dark"] .inspect-thumb, [data-theme="dark"] .shop-thumb, [data-theme="dark"] .product-thumb { background: linear-gradient(160deg, #e2d9cc, #c9bdad); }
+[data-theme="dark"] .fact.strong { background: var(--color-primary-soft); color: var(--color-primary-text); }
+[data-theme="dark"] .switch { background: #4c433c; }
+[data-theme="dark"] .switch::after { background: #f3ede6; }
+[data-theme="dark"] .settings-block.danger { background: #241a1a; border-color: #5a2a2a; }
+[data-theme="dark"] .fav-btn { background: rgba(34, 30, 27, 0.92); }
+[data-theme="dark"] .project-thumb, [data-theme="dark"] .card-thumb { background-color: #1d1a17; }
+[data-theme="dark"] .budget-card, [data-theme="dark"] .shop-summary { background: linear-gradient(150deg, #2c2622, #141110); }
+[data-theme="dark"] .toast { border: 1px solid var(--color-border-strong); }
+[data-theme="dark"] .sel-bar { background: #2c2622; }
+[data-theme="dark"] .dialog::backdrop { background: rgba(0, 0, 0, 0.6); }
+[data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] textarea { color: var(--color-foreground); }
+
+/* Phones: logo, language, theme, country and menu on one line */
+@media (max-width: 520px) {
+  html[lang] .nav-inner { gap: 0.45rem; }
+  .nav .lang-toggle, .nav .theme-toggle { margin-right: 0; }
+}
+@media (max-width: 400px) {
+  .nav .lang-toggle, .nav .theme-toggle, .nav .region-btn { width: 40px; height: 40px; }
+}
+/* In the planner on a phone, the project's name needs the room: the language is chosen on the other pages */
+@media (max-width: 520px) { .editor-bar .lang-toggle { display: none; } }

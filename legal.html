@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy, terms and contact — Atelier</title>
+  <meta name="description" content="How Atelier handles your data (it stays in your browser), the terms of use, cookies, accessibility, the legal notice and how to get in touch.">
+  <meta name="theme-color" content="#1f4d43">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier">
+  <meta property="og:title" content="Privacy, terms and contact — Atelier">
+  <meta property="og:description" content="Plan and furnish your home in 3D, right in your browser. Real sizes, real products, real prices.">
+  <meta property="og:image" content="assets/hero-render-1200.jpg">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=41">
+  <link rel="stylesheet" href="css/theme.css?v=12">
+  <script src="js/theme.js?v=1"></script>
+  <script src="js/i18n-fr.js?v=1"></script>
+  <script src="js/i18n.js?v=2"></script>
+</head>
+<body class="doc-page">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Atelier home">
+        <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" class="logo-bg"/>
+          <path d="M16 26 5.5 20.75 16 15.5l10.5 5.25z" class="logo-floor"/>
+          <path d="M5.5 20.75v-10L16 5.5v10z" class="logo-wall-l"/>
+          <path d="M16 15.5v-10l10.5 5.25v10z" class="logo-wall-r"/>
+          <path d="M19 10l4.5 2.25v5L19 15z" class="logo-win"/>
+        </svg>
+        <span>Atelier</span>
+      </a>
+      <nav class="nav-links doc-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="index.html#planner">3D planner</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-ghost btn-small">Log in</a>
+        <a href="signup.html" class="btn btn-primary btn-small">Sign up free</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="doc">
+    <div class="container doc-grid">
+      <aside class="doc-toc" aria-label="On this page">
+        <p class="eyebrow">On this page</p>
+        <ul>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#terms">Terms of use</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#legal-notice">Legal notice</a></li>
+          <li><a href="#credits">Credits</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </aside>
+
+      <article class="doc-body">
+        <header class="doc-head">
+          <p class="eyebrow">The small print, kept short</p>
+          <h1>Privacy, terms &amp; contact</h1>
+          <p class="doc-lead">Atelier is a student project. It runs entirely in your browser: there is no server that stores your plans or your account. Last updated 22 November 2026.</p>
+        </header>
+
+        <section id="privacy" class="doc-section">
+          <h2>Privacy</h2>
+          <p><strong>Your data stays on your device.</strong> Your account (name, email) and your projects are saved in your browser's local storage. Nothing is sent to us, because there is no "us" server to send it to.</p>
+          <ul>
+            <li><strong>Passwords are never stored.</strong> Only a salted PBKDF2-SHA-256 hash (150,000 rounds) is kept, the same method real sites use.</li>
+            <li><strong>Deleting is real.</strong> Deleting your account in Account settings removes your account and all its projects from this browser. Clearing your browser's site data does the same.</li>
+            <li><strong>Another device is another Atelier.</strong> Because everything is local, your projects do not follow you to another browser or computer.</li>
+          </ul>
+          <p><strong>Third parties.</strong> The typeface is kept with the site, so no font service sees you. The 3D engine (Three.js), the PDF maker and, when you measure rooms, Python (Pyodide) load from the jsDelivr network, and the site itself is served by GitHub Pages: like any web request, they see your IP address, never your plans or your account. Product links open IKEA or Leroy Merlin, whose own privacy policies apply there.</p>
+        </section>
+
+        <section id="terms" class="doc-section">
+          <h2>Terms of use</h2>
+          <p>Atelier is free to use for planning your own home. Please use it fairly: don't try to break it for others, and don't present the example content as your own work.</p>
+          <ul>
+            <li><strong>Measurements are a guide.</strong> Always measure the real room and check a product's size with the store before you buy.</li>
+            <li><strong>Prices can change.</strong> Prices were checked on ikea.com/fr and leroymerlin.fr in November 2026. The store's own page is what counts.</li>
+            <li><strong>No guarantee.</strong> The site is offered as it is, as a learning project. Keep a copy of anything important.</li>
+          </ul>
+          <p>3D models and textures come from Poly Haven under the CC0 licence; see <a href="#credits">Credits</a>.</p>
+        </section>
+
+        <section id="cookies" class="doc-section">
+          <h2>Cookies</h2>
+          <p><strong>Atelier sets no cookies</strong> and uses no tracking or advertising. It keeps a few things in your browser's storage so the site works:</p>
+          <div class="doc-table" role="region" aria-label="What is stored" tabindex="0">
+            <table>
+              <thead><tr><th scope="col">What</th><th scope="col">Why</th><th scope="col">How long</th></tr></thead>
+              <tbody>
+                <tr><td>Your account</td><td>So you can log in</td><td>Until you delete it</td></tr>
+                <tr><td>Your projects</td><td>To keep your plans</td><td>Until you delete them</td></tr>
+                <tr><td>Logged-in session</td><td>"Keep me logged in"</td><td>Until you log out</td></tr>
+                <tr><td>Light or dark mode, sort order</td><td>To remember your choices</td><td>Until you clear site data</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="accessibility" class="doc-section">
+          <h2>Accessibility</h2>
+          <p>We aim for WCAG 2.2 level AA. Here is what that means today:</p>
+          <ul>
+            <li>Text and buttons meet 4.5:1 contrast in both light and dark mode.</li>
+            <li>Everything in the planner works with a keyboard: arrows move pieces, <kbd>Delete</kbd> removes, <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes.</li>
+            <li>Animations calm down when your system asks for reduced motion.</li>
+            <li>Furniture and decor pins on the home page use different shapes, not only different colours.</li>
+          </ul>
+          <p><strong>Known limits.</strong> The 3D view itself can't be read by a screen reader; the 2D plan and the lists beside it carry the same information. If something stops you, please tell us (see Contact).</p>
+        </section>
+
+        <section id="legal-notice" class="doc-section">
+          <h2>Legal notice</h2>
+          <dl class="doc-facts">
+            <div><dt>Site</dt><dd>Atelier, a 3D home planner</dd></div>
+            <div><dt>Nature</dt><dd>Non-commercial student project, made for a university application</dd></div>
+            <div><dt>Publisher</dt><dd>The student author of this project, as a private individual (non-professional site)</dd></div>
+            <div><dt>Hosting</dt><dd>GitHub Pages, GitHub Inc., 88 Colin P Kelly Jr Street, San Francisco, CA 94107, USA (<a href="https://github.com" rel="noopener">github.com</a>). Static files only: no database, no server-side code.</dd></div>
+            <div><dt>Source code</dt><dd><a href="https://github.com/suirado/atelier" rel="noopener">github.com/suirado/atelier</a></dd></div>
+            <div><dt>Brands</dt><dd>IKEA and Leroy Merlin names and products belong to their owners. Atelier is not affiliated with them.</dd></div>
+          </dl>
+        </section>
+
+        <section id="credits" class="doc-section">
+          <h2>Credits</h2>
+          <p>Atelier is built on open work by others. Thank you to them.</p>
+          <ul>
+            <li><strong>3D models, floor and fabric textures:</strong> <a href="https://polyhaven.com" rel="noopener">Poly Haven</a>, CC0 (public domain), by Rob Tuytel, Rico Cilliers, James Ray Cock, Jenelle van Heerden, Sergej Majboroda, Dimitrios Savva, Charlotte Baglioni, Kuutti Siitonen, Ulan Cabanilla and others. The full list, model by model, is in <code>assets/models/CREDITS.txt</code>. The TVs and their stands were modelled for Atelier in Blender.</li>
+            <li><strong>3D engine:</strong> <a href="https://threejs.org" rel="noopener">Three.js</a>, MIT licence.</li>
+            <li><strong>Shopping list PDF:</strong> <a href="https://github.com/parallax/jsPDF" rel="noopener">jsPDF</a>, MIT licence.</li>
+            <li><strong>Python in the browser:</strong> <a href="https://pyodide.org" rel="noopener">Pyodide</a>, Mozilla Public Licence 2.0.</li>
+            <li><strong>Typeface:</strong> Plus Jakarta Sans by Tokotype, SIL Open Font Licence 1.1 (<code>assets/fonts/OFL.txt</code>).</li>
+          </ul>
+        </section>
+
+        <section id="contact" class="doc-section">
+          <h2>Contact</h2>
+          <p>Questions, a bug, an idea for a feature? Most answers are in the <a href="index.html#faq">FAQ</a>. For anything else, write to the author of this student project through the address on the project's application file.</p>
+          <div class="doc-cards">
+            <a class="doc-card" href="index.html#faq">
+              <strong>Read the FAQ</strong><span>Measurements, accounts, phones and more</span>
+            </a>
+            <a class="doc-card" href="projects.html#settings">
+              <strong>Manage your data</strong><span>Change your details or delete your account</span>
+            </a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <p>© 2026 Atelier · A student project</p>
+      <p><a href="index.html">Back to the home page</a></p>
+    </div>
+  </footer>
+
+  <script src="js/account.js?v=3"></script>
+  <script src="js/account-ui.js?v=3"></script>
+  <script>
+    // Contents: mark the section you are reading
+    const links = [...document.querySelectorAll(".doc-toc a")];
+    const seen = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      links.forEach((a) => {
+        const on = a.hash === "#" + e.target.id;
+        a.classList.toggle("is-current", on);
+        if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+      });
+    }), { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll(".doc-section").forEach((s) => seen.observe(s));
+  </script>
+</body>
+</html>

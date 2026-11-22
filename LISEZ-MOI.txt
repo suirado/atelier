@@ -1,0 +1,172 @@
+
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║                                                                      ║
+  ║                              A T E L I E R                           ║
+  ║                                                                      ║
+  ║            Planificateur d'intérieur 3D dans le navigateur           ║
+  ║                                                                      ║
+  ║                https://suirado.github.io/atelier/                    ║
+  ║                                                                      ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+
+
+  ┌─ LE PROJET EN BREF ──────────────────────────────────────────────────┐
+
+    Atelier est un planificateur d'intérieur qui fonctionne entièrement
+    dans le navigateur, sans rien installer et sans serveur.
+
+      1. On dessine ses pièces à leurs vraies dimensions.
+      2. On les meuble avec de vrais produits (IKEA, Leroy Merlin…).
+      3. On se promène dedans en 3D.
+
+    La liste de courses, le budget et les quantités de matériaux se
+    calculent tout seuls.
+
+    Projet personnel, réalisé pour apprendre le développement web, la 3D
+    et Python, et présenté dans le cadre de ma candidature en licence
+    informatique.
+
+    Langues ........ français (par défaut) et anglais (bouton FR / EN)
+    Appareils ...... ordinateur et téléphone, mode clair et sombre
+    Installation ... aucune
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+  ┌─ FONCTIONNALITÉS ────────────────────────────────────────────────────┐
+
+    [+] Plan 2D et vue 3D synchronisés
+        on déplace un meuble dans l'un, il bouge dans l'autre
+
+    [+] Dessin des pièces
+        à la souris, ou en décalquant une photo de son plan
+
+    [+] Catalogue d'environ 100 produits réels
+        modèles 3D, dimensions exactes, couleurs, prix, lien magasin
+
+    [+] Vérification de l'espace
+        passages de moins de 60 cm, portes bloquées, lit collé au mur…
+
+    [+] Rideaux sur mesure
+        ils s'accrochent à une fenêtre et la suivent quand elle bouge
+
+    [+] Lumière du jour
+        selon l'heure et l'orientation ; les lampes s'allument le soir
+
+    [+] Liste de courses en PDF
+        une section par magasin, à cocher en boutique
+
+    [+] Calcul des matériaux en Python
+        peinture, parquet, plinthes, calculés par Python dans la page
+
+    [+] Partage par lien
+        tout le plan tient dans l'adresse, sans serveur
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+  ┌─ COMMENT C'EST CONSTRUIT ────────────────────────────────────────────┐
+
+    Navigateur
+     ├── HTML / CSS ............ les pages, sans framework
+     ├── JavaScript ............ éditeur, plan 2D, comptes, partage
+     │    └── Three.js ......... le rendu 3D
+     └── Python (Pyodide) ...... tools/materials.py, exécuté dans la page
+
+    Stockage : dans le navigateur (localStorage, IndexedDB).
+    Aucun serveur, aucune base de données : le site est hébergé
+    gratuitement sur GitHub Pages.
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+  ┌─ QUELQUES PROBLÈMES INTÉRESSANTS ────────────────────────────────────┐
+
+    Problème   Stocker des mots de passe sans serveur
+    Solution   Seul un hachage PBKDF2-SHA-256 salé est gardé
+               (150 000 itérations), jamais le mot de passe.
+
+    Problème   Partager un plan sans serveur
+    Solution   Le plan est compressé puis encodé dans le lien :
+               environ 1 500 caractères pour 5 pièces.
+
+    Problème   Savoir si on peut circuler entre les meubles
+    Solution   Les pièces ouvertes forment un seul espace (union-find),
+               puis on mesure l'écart entre chaque paire de meubles.
+
+    Problème   Savoir si c'est la fenêtre ou le rideau qui a bougé
+    Solution   Chaque rideau garde l'identifiant de sa fenêtre et
+               compare sa position à la précédente.
+
+    Problème   Traduire tout le site sans framework
+    Solution   Un dictionnaire et un MutationObserver qui traduit
+               chaque texte dès qu'il apparaît.
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+  ┌─ ORGANISATION DES FICHIERS ──────────────────────────────────────────┐
+
+    atelier/
+     ├── index.html ............... page d'accueil
+     ├── projects.html ............ « Mes projets »
+     ├── project.html ............. l'éditeur (plan 2D + vue 3D)
+     ├── view.html ................ un plan partagé, en lecture seule
+     ├── login.html, signup.html .. connexion et inscription
+     ├── legal.html ............... confidentialité, crédits
+     ├── js/ ...................... le code (3D, éditeur, comptes…)
+     ├── css/ ..................... les styles
+     ├── tools/ ................... scripts Python
+     └── assets/ .................. modèles 3D, textures, images
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+  ┌─ LANCER LE SITE ─────────────────────────────────────────────────────┐
+
+    En ligne (le plus simple)
+        https://suirado.github.io/atelier/
+
+    Sous Windows
+        double-cliquer sur « Ouvrir Atelier.bat »,
+        puis ouvrir http://localhost:5500
+
+    Autre système
+        python -m http.server 5500
+
+    Remarque : ouvrir index.html directement par un double-clic ne
+    suffit pas, les navigateurs bloquent alors la 3D.
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+  ┌─ MÉTHODE DE TRAVAIL ─────────────────────────────────────────────────┐
+
+    J'ai conçu ce projet et réalisé son implémentation en Python et en
+    HTML : l'idée, les fonctionnalités, la structure des pages, les
+    calculs, les logements d'exemple, et les tests de chaque étape dans
+    le navigateur.
+
+    Pour l'esthétique visuelle (couleurs, mise en page, finitions du
+    design), je me suis servi d'une intelligence artificielle, Claude
+    (Anthropic).
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+  ┌─ CRÉDITS ────────────────────────────────────────────────────────────┐
+
+    Modèles 3D et textures .. Poly Haven, licence CC0
+    Bibliothèques ........... Three.js (MIT), jsPDF (MIT),
+                              Pyodide (MPL 2.0)
+    Police .................. Plus Jakarta Sans, SIL Open Font
+                              License 1.1
+
+    IKEA et Leroy Merlin sont des marques de leurs propriétaires ;
+    Atelier n'est pas affilié à ces marques.
+
+  └──────────────────────────────────────────────────────────────────────┘
+
+
+                 © 2026 · projet étudiant non commercial
+

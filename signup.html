@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create your free account — Atelier</title>
+  <meta name="description" content="Create a free Atelier account to save your rooms, furniture and decorations, and come back to them whenever you like.">
+  <meta name="theme-color" content="#1f4d43">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier">
+  <meta property="og:title" content="Create your free account — Atelier">
+  <meta property="og:description" content="Plan and furnish your home in 3D, right in your browser. Real sizes, real products, real prices.">
+  <meta property="og:image" content="assets/hero-render-1200.jpg">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=41">
+  <link rel="stylesheet" href="css/auth.css?v=7">
+  <link rel="stylesheet" href="css/theme.css?v=12">
+  <script src="js/theme.js?v=1"></script>
+  <script src="js/i18n-fr.js?v=1"></script>
+  <script src="js/i18n.js?v=2"></script>
+</head>
+<body class="auth-page">
+  <a href="#signup-form" class="skip-link">Skip to the form</a>
+
+  <div class="auth">
+    <main class="auth-main" id="main">
+      <header class="auth-top">
+        <a href="index.html" class="logo" aria-label="Atelier home">
+          <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" class="logo-bg"/>
+          <path d="M16 26 5.5 20.75 16 15.5l10.5 5.25z" class="logo-floor"/>
+          <path d="M5.5 20.75v-10L16 5.5v10z" class="logo-wall-l"/>
+          <path d="M16 15.5v-10l10.5 5.25v10z" class="logo-wall-r"/>
+          <path d="M19 10l4.5 2.25v5L19 15z" class="logo-win"/>
+          </svg>
+          <span>Atelier</span>
+        </a>
+        <a href="index.html" class="auth-back" data-fr="Accueil">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5 M11 6l-6 6 6 6"/></svg>
+          Back to home
+        </a>
+      </header>
+
+      <div class="auth-card">
+        <div id="auth-intro">
+          <h1>Create your free account</h1>
+          <p class="auth-lead">Save your rooms, furniture and colours, and pick up where you left off on any device.</p>
+          <ul class="auth-perks">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free forever</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No card needed</li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Takes 30 seconds</li>
+          </ul>
+        </div>
+
+        <!-- Shown after a failed submit; gets the focus so nobody misses it -->
+        <div class="error-summary" id="signup-errors" role="alert" tabindex="-1" aria-labelledby="signup-errors-title" hidden>
+          <h2 id="signup-errors-title">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5 M12 16.5v.01"/></svg>
+            A few things to fix
+          </h2>
+          <ul></ul>
+        </div>
+
+        <form class="auth-form" id="signup-form" data-summary="signup-errors" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <div class="input-wrap">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <input id="name" name="name" type="text" autocomplete="name" autocapitalize="words" placeholder="e.g. Maria Popescu" required aria-describedby="name-error">
+              <span class="field-status" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            </div>
+            <p class="field-error" id="name-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <div class="input-wrap">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="name@example.com" required aria-describedby="email-hint email-error">
+              <span class="field-status" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            </div>
+            <p class="field-hint" id="email-hint">You'll use it to log in. We never share it.</p>
+            <p class="field-error" id="email-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap has-toggle">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              <input id="password" name="password" type="password" autocomplete="new-password" data-rules required aria-describedby="password-rules password-error">
+              <button class="reveal" type="button" aria-controls="password" aria-pressed="false" aria-label="Show password">
+                <svg class="icon eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="icon eye-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18 M10.6 5.1A10 10 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.1 M6.6 6.6A17 17 0 0 0 2 12s3.5 7 10 7a9.7 9.7 0 0 0 5.4-1.6 M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+            </div>
+            <div class="strength" data-level="0" aria-hidden="true"><span></span></div>
+            <ul class="rules" id="password-rules" aria-label="Your password needs">
+              <li data-rule="length">8+ characters</li>
+              <li data-rule="letter">A letter</li>
+              <li data-rule="number">A number</li>
+            </ul>
+            <p class="caps-warning" hidden>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8h-4v6H8v-6H4z"/></svg>
+              Caps Lock is on
+            </p>
+            <p class="field-error" id="password-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <div class="check-wrap">
+              <label class="check" for="terms">
+                <input id="terms" name="terms" type="checkbox" required aria-describedby="terms-error">
+                <span>I agree to the <a href="legal.html#terms">Terms of use</a> and <a href="legal.html#privacy">Privacy policy</a></span>
+              </label>
+            </div>
+            <p class="field-error" id="terms-error" hidden></p>
+          </div>
+
+          <button class="btn btn-primary auth-submit" type="submit" data-busy="Creating your account…">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="label">Create my free account</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+
+        <!-- Shown once the account is created -->
+        <div class="auth-done" id="auth-done" hidden>
+          <div class="done-badge" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </div>
+          <h2 tabindex="-1">Welcome to Atelier, <span data-name>friend</span>!</h2>
+          <p>Your account is ready. Start with one room: draw its walls and the measurements appear on their own.</p>
+          <a href="projects.html?new=1" class="btn btn-primary btn-large">
+            Start my first project
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="preview-note">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5 M12 7.5v.01"/></svg>
+            <span>Your account is saved in this browser. Atelier is in preview, so it doesn't sync to other devices yet.</span>
+          </p>
+        </div>
+
+        <p class="auth-switch">Already have an account?<a href="login.html">Log in</a></p>
+        <p class="auth-guest">Just looking?<a href="login.html?guest=1" data-guest>Try it without an account</a></p>
+      </div>
+
+      <p class="auth-foot">© 2026 Atelier · <a href="legal.html#privacy">Privacy</a> · <a href="legal.html#terms">Terms</a></p>
+    </main>
+
+    <!-- Desktop only: the example home, with what you get -->
+    <aside class="auth-art" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="assets/hero-render-1200.webp 1200w, assets/hero-render.webp 2000w" sizes="50vw">
+        <img src="assets/hero-render-1200.jpg" alt="" width="1200" height="825" decoding="async">
+      </picture>
+      <span class="art-tag"><i></i>The Sunlit Dream Home · 160 m²</span>
+      <div class="art-card">
+        <h2>Everything for your home, in one place</h2>
+        <ul>
+          <li><span><svg class="icon" viewBox="0 0 24 24"><path d="M3 5h18v14H3z M3 12h9 M12 5v14"/></svg></span>Draw rooms to their real size</li>
+          <li><span><svg class="icon" viewBox="0 0 24 24"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3 M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v4H2z"/></svg></span>Furniture with real prices and shops</li>
+          <li><span><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z M8 4v5h7V4 M8 20v-6h8v6"/></svg></span>Every project saved to your account</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/account.js?v=3" defer></script>
+  <script src="js/auth.js?v=5" defer></script>
+</body>
+</html>

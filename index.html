@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Plan and furnish your home in 3D</title>
+  <meta name="description" content="Atelier is a free 3D home planner in your browser. Choose a room or build your own to size, furnish it in 3D with real products and prices, and save every project to your account.">
+  <meta name="theme-color" content="#1f4d43">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier">
+  <meta property="og:title" content="Atelier — Plan and furnish your home in 3D">
+  <meta property="og:description" content="Plan and furnish your home in 3D, right in your browser. Real sizes, real products, real prices.">
+  <meta property="og:image" content="assets/hero-render-1200.jpg">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=41">
+  <link rel="stylesheet" href="css/theme.css?v=12">
+  <script src="js/theme.js?v=1"></script>
+  <script src="js/i18n-fr.js?v=1"></script>
+  <script src="js/i18n.js?v=2"></script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Atelier home">
+        <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" class="logo-bg"/>
+          <path d="M16 26 5.5 20.75 16 15.5l10.5 5.25z" class="logo-floor"/>
+          <path d="M5.5 20.75v-10L16 5.5v10z" class="logo-wall-l"/>
+          <path d="M16 15.5v-10l10.5 5.25v10z" class="logo-wall-r"/>
+          <path d="M19 10l4.5 2.25v5L19 15z" class="logo-win"/>
+        </svg>
+        <span>Atelier</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="#how-it-works" data-fr="Étapes">How it works</a>
+        <a href="#planner">3D planner</a>
+        <a href="#features" data-fr="Fonctions">Features</a>
+        <a href="#homes">Homes</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <div class="nav-actions-mobile">
+          <a href="login.html" class="btn btn-secondary">Log in</a>
+          <a href="signup.html" class="btn btn-primary">Sign up free</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-ghost btn-small">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0 M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+          Log in
+        </a>
+        <a href="signup.html" class="btn btn-primary btn-small" data-fr="S'inscrire">Sign up free</a>
+      </div>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="badge reveal" style="--delay: 50ms">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Free 3D home planner, in your browser
+        </p>
+
+        <h1 class="hero-title" data-fr-words="Aménagez votre logement, pièce par pièce.">
+          <span class="word">Design</span>
+          <span class="word">your</span>
+          <span class="word">home,</span>
+          <span class="word accent">room</span>
+          <span class="word accent">by</span>
+          <span class="word accent">room.</span>
+        </h1>
+
+        <p class="hero-text reveal" style="--delay: 600ms">
+          Pick a room or build your own to its real size, then furnish it in 3D:
+          walk around it, swap the sofa, change the floor and the walls. Every project
+          is saved to your account, with prices and where to buy each piece.
+        </p>
+
+        <div class="hero-actions reveal" style="--delay: 750ms">
+          <a href="signup.html" class="btn btn-primary btn-large">
+            Create free account
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="login.html?guest=1&amp;next=projects.html%3Fhome%3Dparis-flat" class="btn btn-secondary btn-large">Try it now, no account</a>
+        </div>
+
+        <ul class="hero-trust reveal" style="--delay: 900ms">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Real measurements</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>3D and 2D views</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Real prices &amp; stores</li>
+        </ul>
+      </div>
+
+      <!-- Interactive preview of the workspace: click the tools to switch views -->
+      <div class="plan-card reveal" id="plan-card" data-mode="walls" style="--delay: 500ms">
+        <div class="plan-toolbar">
+          <div class="tools" role="tablist" aria-label="Workspace tools">
+            <button class="tool" role="tab" id="tab-walls" data-mode="walls" aria-selected="true" aria-controls="inspector">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z M3 12h9 M12 5v14"/></svg>Walls
+            </button>
+            <button class="tool" role="tab" id="tab-furniture" data-mode="furniture" aria-selected="false" aria-controls="inspector" tabindex="-1">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3 M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v4H2z"/></svg>Furniture
+            </button>
+            <button class="tool" role="tab" id="tab-decor" data-mode="decor" aria-selected="false" aria-controls="inspector" tabindex="-1">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22V12 M12 12C12 7 8 4 4 4c0 5 3 8 8 8z M12 15c0-4 3-7 8-7 0 4-3 7-8 7z"/></svg>Decor
+            </button>
+            <button class="tool" role="tab" id="tab-measure" data-mode="measure" aria-selected="false" aria-controls="inspector" tabindex="-1">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18v8H3z M7 8v3 M11 8v4 M15 8v3 M19 8v3"/></svg>Measure
+            </button>
+          </div>
+          <span class="plan-name">The Sunlit Dream Home</span>
+        </div>
+
+        <div class="plan-stage">
+          <div class="plan-photo-wrap has-intro is-intro" id="plan-photo">
+            <picture>
+              <source type="image/webp" srcset="assets/hero-render-1200.webp 1200w, assets/hero-render.webp 2000w" sizes="(max-width: 900px) 94vw, 560px">
+              <img class="plan-photo" src="assets/hero-render-1200.jpg" width="1200" height="825" fetchpriority="high" decoding="async"
+                   alt="Photorealistic 3D cut-away of a furnished 160 m² home: open living room and kitchen, bedroom with a glass walk-in closet, marble bathroom and a garden terrace">
+            </picture>
+            <!-- Intro: walls traced with their lengths, made with Remotion (see /remotion). Plays once, then the picture becomes interactive -->
+            <video class="plan-intro" id="plan-intro" muted playsinline preload="auto" aria-hidden="true" tabindex="-1">
+              <source src="assets/hero-intro.webm" type="video/webm">
+              <source src="assets/hero-intro.mp4" type="video/mp4">
+            </video>
+            <!-- Clickable points on the picture, filled by js/main.js -->
+            <div class="hotspots" id="hotspots"></div>
+          </div>
+
+          <div class="plan-total" aria-hidden="true">
+            <span>Total area</span>
+            <strong>160 m²</strong>
+          </div>
+        </div>
+
+        <!-- Details for the selected tool (filled by js/main.js) -->
+        <div class="inspector" id="inspector" role="tabpanel" aria-labelledby="tab-walls" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <header class="section-head reveal-on-scroll">
+          <p class="eyebrow">How it works</p>
+          <h2>From empty walls to a furnished home</h2>
+          <p class="section-text">Four simple steps. You can't break anything, and you can undo everything.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal-on-scroll">
+            <div class="step-visual">
+              <svg viewBox="0 0 120 80" aria-hidden="true">
+                <rect x="30" y="14" width="60" height="52" rx="8" class="v-paper"/>
+                <circle cx="60" cy="34" r="8" class="v-stroke-accent"/>
+                <path d="M46 56a14 10 0 0 1 28 0" class="v-stroke-accent"/>
+              </svg>
+            </div>
+            <span class="step-num">1</span>
+            <h3>Create your free account</h3>
+            <p>Just an email and a password. Your account keeps all your projects safe in one place.</p>
+            <span class="step-time">~ 30 seconds</span>
+          </li>
+          <li class="step reveal-on-scroll">
+            <div class="step-visual">
+              <svg viewBox="0 0 120 80" aria-hidden="true">
+                <rect x="20" y="12" width="80" height="56" rx="6" class="v-paper"/>
+                <rect x="28" y="20" width="30" height="18" rx="3" class="v-fill-sand v-outline"/>
+                <rect x="62" y="20" width="30" height="18" rx="3" class="v-fill-sage v-outline"/>
+                <rect x="28" y="42" width="30" height="18" rx="3" class="v-paper v-outline"/>
+                <rect x="62" y="42" width="30" height="18" rx="3" class="v-paper v-stroke-accent"/>
+                <path d="M72 51h10 M77 46v10" class="v-stroke-accent"/>
+              </svg>
+            </div>
+            <span class="step-num">2</span>
+            <h3>Choose or build a room</h3>
+            <p>Start from a furnished living room, bedroom, kitchen and more, or type your room's real width, length and ceiling.</p>
+            <span class="step-time">~ 1 minute</span>
+          </li>
+          <li class="step reveal-on-scroll">
+            <div class="step-visual">
+              <svg viewBox="0 0 120 80" aria-hidden="true">
+                <path d="M60 18l34 14-34 14-34-14z" class="v-fill-sand v-outline"/>
+                <path d="M26 32v-14l34-12v12 M60 6l34 12v14" class="v-paper v-outline"/>
+                <path d="M26 32v6l34 14 34-14v-6" class="v-stroke-thin"/>
+                <path d="M48 30l10 4 10-4-10-4z" class="v-fill-sage v-outline"/>
+                <path d="M48 30v4l10 4v-4 M68 30v4l-10 4" class="v-outline"/>
+                <circle cx="76" cy="27" r="3.5" class="v-fill-sage v-outline"/>
+              </svg>
+            </div>
+            <span class="step-num">3</span>
+            <h3>Furnish it in 3D</h3>
+            <p>Drag real products into place, swap them in one click, pick floors and wall colours, then stand inside at eye level.</p>
+            <span class="step-time">~ 5 minutes</span>
+          </li>
+          <li class="step reveal-on-scroll">
+            <div class="step-visual">
+              <svg viewBox="0 0 120 80" aria-hidden="true">
+                <rect x="20" y="14" width="80" height="52" rx="6" class="v-paper"/>
+                <path d="M46 46a9 9 0 0 1 1-18 12 12 0 0 1 23 3 8 8 0 0 1 2 15z" class="v-stroke-accent"/>
+                <path d="M53 38l5 5 9-9" class="v-stroke-accent"/>
+              </svg>
+            </div>
+            <span class="step-num">4</span>
+            <h3>It saves itself</h3>
+            <p>Every change is stored in your account. Come back later, from any computer, and carry on.</p>
+            <span class="step-time">automatic</span>
+          </li>
+        </ol>
+
+        <div class="steps-cta reveal-on-scroll">
+          <p>That's really all there is to it.</p>
+          <a href="signup.html" class="btn btn-primary">Create your free account</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIVE 3D PLANNER ================= -->
+    <section class="section section-tinted planner-section" id="planner" aria-labelledby="planner-title">
+      <div class="container">
+        <header class="section-head reveal-on-scroll">
+          <p class="eyebrow">The 3D planner</p>
+          <h2 id="planner-title">Walk around your room before you buy a thing</h2>
+          <p class="section-text">This is the real planner, running right here. Drag to turn the room, or drag a piece of furniture to move it.</p>
+        </header>
+
+        <div class="demo reveal-on-scroll">
+          <div class="demo-view">
+            <div class="demo-stage" id="demo-stage">
+              <p class="demo-status" id="demo-status" role="status">The 3D view loads as you scroll here.</p>
+              <p class="demo-mood" id="demo-mood" aria-live="polite" hidden></p>
+            </div>
+            <div class="demo-cams" role="group" aria-label="Camera">
+              <button type="button" class="demo-cam" data-demo-cam="3d">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 4 0 1 0 18 0 9 4 0 1 0-18 0 M12 8v8"/></svg>Overview
+              </button>
+              <button type="button" class="demo-cam" data-demo-cam="top">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v7 M9 7l3 3 3-3 M4 14h16v6H4z"/></svg>From above
+              </button>
+              <button type="button" class="demo-cam" data-demo-cam="eye">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg>Eye level
+              </button>
+            </div>
+          </div>
+
+          <div class="demo-side">
+            <h3 class="demo-side-title">Pick a room</h3>
+            <div class="demo-rooms" role="group" aria-label="Room">
+              <button type="button" class="demo-room" data-demo-room="living" aria-pressed="true">Living room</button>
+              <button type="button" class="demo-room" data-demo-room="bedroom" aria-pressed="false">Bedroom</button>
+              <button type="button" class="demo-room" data-demo-room="kitchen" aria-pressed="false">Kitchen</button>
+              <button type="button" class="demo-room" data-demo-room="dining" aria-pressed="false">Dining room</button>
+              <button type="button" class="demo-room" data-demo-room="bathroom" aria-pressed="false">Bathroom</button>
+              <button type="button" class="demo-room" data-demo-room="office" aria-pressed="false">Home office</button>
+            </div>
+
+            <ul class="demo-points">
+              <li><span class="demo-point-icon tone-clay" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16 M4 7l3-3 M4 7l3 3 M20 17H4 M20 17l-3-3 M20 17l-3 3"/></svg></span>
+                <span><strong>Swap in one click</strong>Try the armchair instead of the sofa; it keeps its place.</span></li>
+              <li><span class="demo-point-icon tone-sand" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M3 21h18 M5 21V5h14v16 M9 9h6v6H9z"/></svg></span>
+                <span><strong>Doors &amp; windows snap to walls</strong>They cut a real opening, right where you drop them.</span></li>
+              <li><span class="demo-point-icon tone-sage" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M3 9l9-6 9 6 M5 8v12h14V8 M5 14h14"/></svg></span>
+                <span><strong>7 floors, 8 wall colours</strong>Oak, walnut, parquet, tiles, terrazzo, concrete or carpet.</span></li>
+            </ul>
+
+            <a href="signup.html" class="btn btn-primary btn-large demo-cta">
+              Plan my room in 3D
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section-head reveal-on-scroll">
+          <p class="eyebrow">The workspace</p>
+          <h2>Everything to design a home, in one place</h2>
+        </header>
+
+        <div class="features">
+          <article class="feature reveal-on-scroll">
+            <div class="feature-icon tone-clay"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18v8H3z M7 8v3 M11 8v4 M15 8v3 M19 8v3"/></svg></div>
+            <h3>Rooms to scale</h3>
+            <p>Type real measurements or draw on the 2D plan. Lengths and areas appear on their own, in metres.</p>
+          </article>
+          <article class="feature reveal-on-scroll">
+            <div class="feature-icon tone-sand"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3 M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v4H2z M5 17v2 M19 17v2"/></svg></div>
+            <h3>Real products, real prices</h3>
+            <p>Sofas, beds, kitchens and bathrooms from IKEA and Leroy Merlin, at their real size and price.</p>
+          </article>
+          <article class="feature reveal-on-scroll">
+            <div class="feature-icon tone-sage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z M12 12l8-4.5 M12 12v9 M12 12L4 7.5"/></svg></div>
+            <h3>See it in 3D</h3>
+            <p>Turn the room around, look from above, or stand inside at eye level to see how it really feels.</p>
+          </article>
+          <article class="feature reveal-on-scroll">
+            <div class="feature-icon tone-stone"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12v5H4z M16 6.5h3v6h-8V16 M10 16h2v5h-2z"/></svg></div>
+            <h3>Floors &amp; wall colours</h3>
+            <p>Pick wood, parquet, tiles, terrazzo or carpet, and a paint colour, for each room separately.</p>
+          </article>
+          <article class="feature reveal-on-scroll">
+            <div class="feature-icon tone-clay"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a5 5 0 0 1-.5-10A7 7 0 0 1 20 9a4.5 4.5 0 0 1-1 9z M9 13l2 2 4-4"/></svg></div>
+            <h3>Shopping list included</h3>
+            <p>Every piece you place adds up into a budget, with a link to the exact product in the store.</p>
+          </article>
+          <article class="feature reveal-on-scroll">
+            <div class="feature-icon tone-sage"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14L4 9l5-5 M4 9h11a5 5 0 0 1 0 10h-3"/></svg></div>
+            <h3>Undo anything</h3>
+            <p>Moved the sofa to the wrong place? Ctrl+Z takes you back. Everything saves itself as you go.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOMES (three projects people made) ================= -->
+    <section class="section section-tinted" id="homes" aria-labelledby="homes-title">
+      <div class="container">
+        <header class="section-head section-head-row reveal-on-scroll">
+          <div>
+            <p class="eyebrow">Made with Atelier</p>
+            <h2 id="homes-title">Three homes, three styles</h2>
+            <p class="section-text">Real plans, real furniture, every piece on the shopping list. Open one and make it yours.</p>
+          </div>
+          <a href="signup.html" class="btn btn-secondary">Start your own</a>
+        </header>
+
+        <div class="homes">
+          <article class="home-card reveal-on-scroll">
+            <a class="home-media" href="projects.html?home=paris-flat" aria-label="Open the Haussmann flat in Paris">
+              <img src="assets/showcase/paris-eye.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Living room with a carved settee, two bouclé armchairs, tall French windows and a sage kitchen behind">
+              <img class="home-alt" src="assets/showcase/paris-plan.webp" width="1200" height="900" loading="lazy" decoding="async" alt="">
+              <span class="home-style">Parisian classic</span>
+              <span class="home-peek" aria-hidden="true">See the whole plan</span>
+            </a>
+            <div class="home-body">
+              <h3>Haussmann flat, Paris</h3>
+              <p class="home-text">Herringbone floors, tall windows and soft bouclé, with a sage kitchen and a marble bathroom.</p>
+              <ul class="home-stats" aria-label="Details">
+                <li><strong>87</strong> m²</li><li><strong>5</strong> rooms</li><li><strong>55</strong> pieces</li>
+              </ul>
+              <div class="home-foot">
+                <p class="home-owner"><span class="avatar tone-sage" aria-hidden="true">CD</span><span>Claire D.<small>Paris</small></span></p>
+                <a class="btn btn-secondary btn-small" href="projects.html?home=paris-flat">Open this home</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="home-card reveal-on-scroll">
+            <a class="home-media" href="projects.html?home=lisbon-house" aria-label="Open the sunny house in Lisbon">
+              <img src="assets/showcase/lisbon-eye.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Open living and dining room on terracotta tiles, with a leather lounge chair, a wooden table and a white kitchen">
+              <img class="home-alt" src="assets/showcase/lisbon-plan.webp" width="1200" height="900" loading="lazy" decoding="async" alt="">
+              <span class="home-style">Warm Mediterranean</span>
+              <span class="home-peek" aria-hidden="true">See the whole plan</span>
+            </a>
+            <div class="home-body">
+              <h3>Sunny house, Lisbon</h3>
+              <p class="home-text">Terracotta floors, clay walls, linen and jute, and a kitchen that opens onto the terrace.</p>
+              <ul class="home-stats" aria-label="Details">
+                <li><strong>95</strong> m²</li><li><strong>5</strong> rooms</li><li><strong>55</strong> pieces</li>
+              </ul>
+              <div class="home-foot">
+                <p class="home-owner"><span class="avatar tone-clay" aria-hidden="true">ST</span><span>Sofia &amp; Tiago<small>Lisbon</small></span></p>
+                <a class="btn btn-secondary btn-small" href="projects.html?home=lisbon-house">Open this home</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="home-card reveal-on-scroll">
+            <a class="home-media" href="projects.html?home=cluj-loft" aria-label="Open the industrial loft in Cluj">
+              <img src="assets/showcase/cluj-eye.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Loft with green walls, steel windows, a black leather sofa, a walnut floor and an arc lamp">
+              <img class="home-alt" src="assets/showcase/cluj-plan.webp" width="1200" height="900" loading="lazy" decoding="async" alt="">
+              <span class="home-style">Dark industrial</span>
+              <span class="home-peek" aria-hidden="true">See the whole plan</span>
+            </a>
+            <div class="home-body">
+              <h3>Industrial loft, Cluj</h3>
+              <p class="home-text">Steel windows, deep green walls and dark walnut, with a leather corner and a games room.</p>
+              <ul class="home-stats" aria-label="Details">
+                <li><strong>113</strong> m²</li><li><strong>5</strong> rooms</li><li><strong>41</strong> pieces</li>
+              </ul>
+              <div class="home-foot">
+                <p class="home-owner"><span class="avatar tone-stone" aria-hidden="true">AM</span><span>Andrei M.<small>Cluj-Napoca</small></span></p>
+                <a class="btn btn-secondary btn-small" href="projects.html?home=cluj-loft">Open this home</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="demo-note">Example projects shown for demonstration.</p>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS (marquee) ================= -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <header class="section-head reveal-on-scroll">
+          <p class="eyebrow">Reviews</p>
+          <h2>People who never designed a room before</h2>
+        </header>
+      </div>
+
+      <div class="marquee-wrap">
+        <!-- Rows are filled by js/main.js from the REVIEWS list -->
+        <div class="marquee" data-direction="left"><div class="marquee-track" id="marquee-1"></div></div>
+        <div class="marquee" data-direction="right"><div class="marquee-track" id="marquee-2"></div></div>
+      </div>
+
+      <div class="container marquee-controls">
+        <button class="btn btn-ghost btn-small" id="marquee-toggle" aria-pressed="false">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14 M15 5v14"/></svg>
+          <span>Pause reviews</span>
+        </button>
+        <p class="demo-note">Example reviews written for this student project.</p>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section section-tinted" id="faq">
+      <div class="container container-narrow">
+        <header class="section-head reveal-on-scroll">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions? We've got answers</h2>
+        </header>
+
+        <div class="faq">
+          <details class="reveal-on-scroll">
+            <summary>Is it really 3D?</summary>
+            <p>Yes. Every room is built in 3D with its walls, doors, windows and furniture. You can turn it around, look from above or stand inside at eye level, and switch to a 2D floor plan whenever you like.</p>
+          </details>
+          <details class="reveal-on-scroll">
+            <summary>Do I need any design or architecture experience?</summary>
+            <p>Not at all. Atelier is made for complete beginners. If you can click and drag, you can design a room.</p>
+          </details>
+          <details class="reveal-on-scroll">
+            <summary>Why do I need an account?</summary>
+            <p>Your account is where your projects live. It saves your work automatically, so you never lose a design and can open it from any computer.</p>
+          </details>
+          <details class="reveal-on-scroll">
+            <summary>Is it free?</summary>
+            <p>Yes. Creating an account and designing your home are free.</p>
+          </details>
+          <details class="reveal-on-scroll">
+            <summary>Can I use the real measurements of my home?</summary>
+            <p>Yes. Choose "Build your own" and type your room's width, length and ceiling height in metres. Furniture is shown at its real size, so you can check that everything fits.</p>
+          </details>
+          <details class="reveal-on-scroll">
+            <summary>Can I use it on my phone?</summary>
+            <p>Yes. On a phone, drag with one finger to turn the room and drag a piece to move it. For bigger plans, a computer with a mouse is the most comfortable.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="container">
+      <div class="cta-band reveal-on-scroll">
+        <div>
+          <h2>Ready to see your home in 3D?</h2>
+          <p>Create your free account and furnish your first room in minutes.</p>
+        </div>
+        <a href="signup.html" class="btn btn-light btn-large">
+          Create free account
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Atelier home">
+          <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" class="logo-bg"/>
+          <path d="M16 26 5.5 20.75 16 15.5l10.5 5.25z" class="logo-floor"/>
+          <path d="M5.5 20.75v-10L16 5.5v10z" class="logo-wall-l"/>
+          <path d="M16 15.5v-10l10.5 5.25v10z" class="logo-wall-r"/>
+          <path d="M19 10l4.5 2.25v5L19 15z" class="logo-win"/>
+          </svg>
+          <span>Atelier</span>
+        </a>
+        <p>A beginner-friendly 3D home planner: rooms, furniture and decor, right in your browser.</p>
+      </div>
+
+      <nav aria-label="Product">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#planner">3D planner</a></li>
+          <li><a href="projects.html">My projects</a></li>
+          <li><a href="#homes">Homes</a></li>
+          <li><a href="#features" data-fr="Fonctions">Features</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Account and help">
+        <h3>Account &amp; help</h3>
+        <ul>
+          <li><a href="signup.html">Sign up</a></li>
+          <li><a href="login.html">Log in</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="legal.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Legal">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="legal.html#privacy">Privacy policy</a></li>
+          <li><a href="legal.html#terms">Terms of use</a></li>
+          <li><a href="legal.html#cookies">Cookie policy</a></li>
+          <li><a href="legal.html#accessibility">Accessibility</a></li>
+          <li><a href="legal.html#legal-notice">Legal notice</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Atelier · A student project</p>
+      <p>Made with care for first-time home designers.</p>
+    </div>
+  </footer>
+
+  <script src="js/account.js?v=3"></script>
+  <script src="js/regions.js?v=6"></script>
+  <script src="js/catalog.js?v=28"></script>
+  <script src="js/account-ui.js?v=3"></script>
+  <script src="js/main.js?v=24"></script>
+  <script type="module" src="js/demo3d.js?v=76"></script>
+</body>
+</html>

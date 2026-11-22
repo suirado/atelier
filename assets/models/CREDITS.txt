@@ -1,0 +1,81 @@
+3D models in this folder come from Poly Haven (https://polyhaven.com), CC0 (public domain).
+Textures reduced to 1K/512 px and meshes compressed (Draco) for the web.
+
+armchair.glb      Modern Arm Chair 01 — Vibrant Nordic
+coffee-table.glb  Modern Coffee Table 01 — Amin
+tv-bench.glb      Modern Wooden Cabinet — Patrik Pangerl
+bedside.glb       Side Table 01 — James Ray Cock
+chair.glb         Dining Chair 02 — James Ray Cock
+table.glb         Wooden Table 02 — Serhii Khromov
+plant-tall.glb    Potted Plant 01 — Rico Cilliers
+plant-medium.glb  Potted Plant 02 — Rico Cilliers
+succulent.glb     Potted Plant 04 — James Ray Cock
+ceiling-lamp.glb  Modern Ceiling Lamp 01 — James Ray Cock
+vase.glb          Ceramic Vase 01 — James Ray Cock
+book-set.glb      books and magazines, from Book Encyclopedia Set 01 — John Malcolm (Poly Haven, CC0)
+
+Floor textures in assets/floors (all CC0, from Poly Haven, https://polyhaven.com):
+  oak: Wooden Floor 02 by Charlotte Baglioni, Rico Cilliers
+  walnut: Plank Flooring 04 by Dimitrios Savva
+  herring: Herringbone Parquet by Jenelle van Heerden, Sergej Majboroda
+  diagonal: Diagonal Parquet by Jenelle van Heerden, Sergej Majboroda
+  tiles: Marble 01 by Rob Tuytel
+  checker: Floor Tiles 06 by Rob Tuytel
+  terracotta: Terracotta Floor Tiles by Dimitrios Savva
+  stone: Grey Cartago 01 by Jenelle van Heerden, Lucas Sanchez Ros
+  terrazzo: Terrazzo Tiles by Amal Kumar
+  concrete: Concrete Pavement by Charlotte Baglioni
+ottoman.glb        - "Ottoman 01" by Caspian Fortune, Poly Haven (CC0) https://polyhaven.com/a/Ottoman_01
+cube-shelf.glb     - "Wooden Display Shelves 01" by James Ray Cock, Poly Haven (CC0) https://polyhaven.com/a/wooden_display_shelves_01
+steel-shelf.glb    - "Steel Frame Shelves 01" by James Ray Cock, Poly Haven (CC0) https://polyhaven.com/a/steel_frame_shelves_01
+
+More scanned models (Poly Haven, CC0, https://polyhaven.com/a/<id>):
+pillows.glb throw_pillows_01 · chair-white.glb painted_wooden_chair_01 · bar-chair.glb metal_stool_03 · stool-metal.glb metal_stool_02
+coffee-round.glb coffee_table_round_01 · desk-lamp.glb desk_lamp_arm_01 · vase-wide.glb ceramic_vase_02 · vase-jug.glb ceramic_vase_04
+vase-tall.glb ceramic_vase_03 · vase-blue.glb antique_ceramic_vase_01 · bowl.glb wooden_bowl_01 · frame-black.glb standing_picture_frame_01
+frame-white.glb standing_picture_frame_02 · basket-lid.glb wicker_basket_02 · kettle.glb vintage_electric_kettle · board.glb wooden_cutting_board
+wine.glb wine_bottles_01 · bust.glb marble_bust_01 · cat.glb concrete_cat_statue · elephant.glb carved_wooden_elephant · chess.glb chess_set
+tea-set.glb tea_set_01 · shell.glb lambis_shell · clay-pot.glb planter_pot_clay · alarm-clock.glb alarm_clock_01 · mantel-clock.glb mantel_clock_01
+candlestick.glb wooden_candlestick · lantern.glb Lantern_01 · picture-1.glb hanging_picture_frame_01 · picture-2.glb hanging_picture_frame_02
+picture-oval.glb hanging_picture_frame_03 · painting.glb fancy_picture_frame_01 · mirror.glb ornate_mirror_01 · wall-clock.glb wall_clock
+
+Furniture surfaces in assets/materials (Poly Haven textures, CC0): fabric = Rough Linen, boucle = Wool Boucle, velvet = Velour Velvet,
+leather = Fabric Leather 02, wood = Oak Veneer 01, rug = Caban, jute = Hessian 380.
+
+Added November 2026 (Poly Haven, CC0, https://polyhaven.com/a/<id>; textures 1K/512 WebP, meshes Draco):
+lounge-chair.glb mid_century_lounge_chair (Kuutti Siitonen) · drawer-cabinet.glb drawer_cabinet (Ulan Cabanilla)
+round-table.glb round_wooden_table_01 (Ulan Cabanilla) · apothecary-chest.glb vintage_wooden_drawer_01 (James Ray Cock)
+side-table-tall.glb side_table_tall_01 (James Ray Cock) · console-table.glb small_wooden_table_01 (Ulan Cabanilla)
+bistro-wood.glb outdoor_table_chair_set_01 (James Ray Cock) · horse.glb horse_statue_01 (Rico Cilliers)
+whale.glb bronze_whale_statue (Tina) · candelabra.glb brass_candleholders (Tina) · wood-plate.glb carved_wooden_plate (Jan Martens)
+wicker-basket.glb wicker_basket_01 (Kuutti Siitonen) · ceramic-pot.glb ceramic_pot (Aron Łyczek) · wood-bowl.glb wooden_bowl_02 (Kuutti Siitonen)
+brass-vase.glb brass_vase_03 (Rico Cilliers)
+Plants (Poly Haven, CC0) set in pots modelled for Atelier:
+plant-money-tree.glb pachira_aquatica_01 · plant-fern.glb fern_02 · plant-calathea.glb calathea_orbifolia_01 · plant-anthurium.glb anthurium_botany_01
+  (all by Rob Tuytel, Rico Cilliers)
+Modelled for Atelier in Blender (no outside sources; the screen artwork is original):
+tv-wall.glb · tv-easel.glb · tv-stand.glb
+
+Floor texture added: carpet: Curly Teddy Natural (Poly Haven, CC0)
+
+Added November 2026, round two (Poly Haven, CC0, https://polyhaven.com/a/<id>):
+sofa-tufted.glb sofa_02 (Kirill Sannikov) · sofa-settee.glb Sofa_01 (Kirill Sannikov)
+coffee-table-2.glb modern_coffee_table_02 (Amin) · steel-shelf-3.glb steel_frame_shelves_03 (Ulan Cabanilla)
+shelf-wall.glb Shelf_01 (Gabriel Radić)
+Modelled for Atelier in Blender (no outside sources; surfaces use the CC0 Poly Haven textures listed above,
+plus bouclé, towel and subway-tile textures drawn for Atelier):
+bath-oval.glb · toilet-wall.glb · vanity-double.glb · vanity-walnut.glb · vanity-white.glb · tall-cabinet-oak.glb
+shower-walkin.glb · towel-radiator.glb · towel-ladder.glb · washing-machine.glb · mirror-round-led.glb · mirror-cabinet.glb
+kitchen-metod.glb · kitchen-compact.glb · kitchen-sage.glb · kitchen-black.glb · base-sage.glb · base-black.glb
+base-oak-sink.glb · fridge-white.glb · tall-fridge-sage.glb · tall-oven.glb · island-oak.glb · wall-shelf-oak.glb
+sofa-boucle.glb · sofa-sage.glb · sofa-modular.glb · armchair-boucle.glb · lamp-arc.glb · lamp-globe.glb
+lamp-ceramic.glb · lamp-tripod.glb · coffee-travertine.glb · coffee-oval-oak.glb · side-marble.glb · bookcase-oak.glb
+
+Added November 2026, round three (Poly Haven, CC0, https://polyhaven.com/a/<id>):
+Ceiling lights: light-chandelier-1/2/3.glb Chandelier_01/02/03 · light-chinese.glb Chinese chandelier (Kirill Sannikov)
+  light-lantern.glb lantern_chandelier_01 · light-caged.glb caged_hanging_light (Ulan Cabanilla) · light-industrial.glb industrial_pipe_lamp (Kuutti Siitonen)
+Plants: plant-rubber.glb potted_plant_01 · plant-leafy.glb potted_plant_02 (Rico Cilliers)
+  plant-mini.glb potted_plant_04 · plant-flower-box.glb planter_box (James Ray Cock)
+  plant-gazania.glb gazania · plant-flowering-succulent.glb cheiridopsis (James Ray Cock, Jenelle van Heerden)
+  plant-periwinkle.glb periwinkle with planter_pot_clay (Amal Kumar)
+mirror.glb: ornate_mirror_01, glass split from the frame so it can really reflect

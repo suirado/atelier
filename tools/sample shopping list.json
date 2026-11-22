@@ -1,0 +1,11 @@
+{
+  "project": "Living room",
+  "exported": "2026-11-16",
+  "currency": "EUR",
+  "items": [
+    { "name": "3-seat sofa", "product": "KIVIK 3-seat sofa, Tresund light beige", "category": "Living room", "store": "IKEA", "qty": 1, "unit_price": 649, "url": "https://www.ikea.com/fr/fr/p/kivik-canape-3-places-tresund-beige-clair-s89482830/" },
+    { "name": "Leather armchair", "product": "LANDSKRONA armchair, golden-brown leather", "category": "Living room", "store": "IKEA", "qty": 2, "unit_price": 499, "url": "https://www.ikea.com/fr/fr/p/landskrona-fauteuil-grann-bomstad-brun-dore-bois-s19269197/" },
+    { "name": "Candles", "product": "FENOMEN unscented block candle, set of 3", "category": "Small decor", "store": "IKEA", "qty": 3, "unit_price": 2.99, "url": "https://www.ikea.com/fr/fr/" },
+    { "name": "Ceiling light", "product": "Pendant \"Globe\" 30 cm, opal glass", "category": "Living room", "store": "Leroy Merlin", "qty": 1, "unit_price": 89.9, "url": "https://www.leroymerlin.fr/" }
+  ]
+}

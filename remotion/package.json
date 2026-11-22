@@ -1,0 +1,20 @@
+{
+  "name": "atelier-hero-intro",
+  "private": true,
+  "description": "Remotion source for the hero intro animation (wall dimensions drawn over the 3D render).",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts HeroIntro ../assets/hero-intro.webm --codec=vp9 --crf=36 --scale=0.75 && remotion render src/index.ts HeroIntro ../assets/hero-intro.mp4 --codec=h264 --crf=24 --scale=0.5"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.544",
+    "@remotion/google-fonts": "^4.0.544",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.544"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

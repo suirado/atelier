@@ -1,0 +1,48 @@
+MATERIALS: Sunlit home
+================================================================
+
+Living room  (8 × 5 m, 2.6 m high)
+  Floor        40.00 m²   Light oak: 44.00 m² with 10% for cuts = 20 boxes
+  Walls        60.82 m²   (67.60 m² minus 3 doors/windows)
+  Paint           13 L    Linen, wall paint, matt: 1 × 10 L + 1 × 5 L
+  Ceiling          8 L    white
+  Skirting     24.20 m    11 boards
+
+Kitchen & dining  (8 × 5 m, 2.6 m high)
+  Floor        40.00 m²   Herringbone: 46.00 m² with 15% for cuts = 33 boxes
+  Walls        59.18 m²   (67.60 m² minus 4 doors/windows)
+  Paint           12 L    Pure white, kitchen & bathroom paint: 1 × 10 L + 1 × 2.5 L
+  Ceiling          8 L    white
+  Skirting     22.80 m    10 boards
+
+Bedroom  (10 × 5 m, 2.6 m high)
+  Floor        50.00 m²   Dark walnut: 55.00 m² with 10% for cuts = 28 boxes
+  Walls        73.11 m²   (78.00 m² minus 2 doors/windows)
+  Paint           15 L    Oat, wall paint, matt: 1 × 10 L + 1 × 5 L
+  Ceiling         10 L    white
+  Skirting     29.10 m    13 boards
+
+Bathroom  (6 × 5 m, 2.6 m high)
+  Floor        30.00 m²   Terrazzo: 33.00 m² with 10% for cuts = 31 boxes
+  Walls        53.75 m²   (57.20 m² minus 2 doors/windows)
+  Paint           11 L    Morning blue, kitchen & bathroom paint: 1 × 10 L + 1 × 2.5 L
+  Ceiling          6 L    white
+
+Terrace  (4.4 × 5.6 m, 1.1 m high)
+  Floor        24.64 m²   Concrete: 24.64 m² with 0% for cuts
+  Walls      outside: nothing to paint
+
+SHOPPING LIST
+----------------------------------------------------------------
+  Paint Linen (wall paint, matt): 13 L = 1 × 10 L + 1 × 5 L
+  Paint Pure white (kitchen & bathroom paint): 12 L = 1 × 10 L + 1 × 2.5 L
+  Paint Oat (wall paint, matt): 15 L = 1 × 10 L + 1 × 5 L
+  Paint Morning blue (kitchen & bathroom paint): 11 L = 1 × 10 L + 1 × 2.5 L
+  Ceiling white: 32 L = 3 × 10 L + 1 × 2.5 L
+  Parquet Light oak: 20 boxes (44.00 m²)
+  Parquet Herringbone: 33 boxes (46.00 m²)
+  Parquet Dark walnut: 28 boxes (55.00 m²)
+  Tiles Terrazzo: 31 boxes (33.00 m²)
+  Skirting boards: 34 × 2.4 m
+
+Rules of thumb: 1 L covers 10 m² per coat, 2 coats; skirting in 2.4 m boards. Check the label on what you buy.

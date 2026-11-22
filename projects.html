@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My projects — Atelier</title>
+  <meta name="description" content="All your Atelier home projects in one place.">
+  <meta name="theme-color" content="#1f4d43">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier">
+  <meta property="og:title" content="My projects — Atelier">
+  <meta property="og:description" content="Plan and furnish your home in 3D, right in your browser. Real sizes, real products, real prices.">
+  <meta property="og:image" content="assets/hero-render-1200.jpg">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=41">
+  <link rel="stylesheet" href="css/app.css?v=34">
+  <link rel="stylesheet" href="css/theme.css?v=12">
+  <script src="js/theme.js?v=1"></script>
+  <script src="js/i18n-fr.js?v=1"></script>
+  <script src="js/i18n.js?v=2"></script>
+  <!-- Not logged in? Go to the log-in page before anything is drawn -->
+  <script src="js/account.js?v=3"></script>
+  <script>if (!Account.current()) location.replace("login.html?next=" + encodeURIComponent("projects.html" + location.search + location.hash));</script>
+</head>
+<body class="app-page" data-auth="required">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Atelier home">
+        <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" class="logo-bg"/>
+          <path d="M16 26 5.5 20.75 16 15.5l10.5 5.25z" class="logo-floor"/>
+          <path d="M5.5 20.75v-10L16 5.5v10z" class="logo-wall-l"/>
+          <path d="M16 15.5v-10l10.5 5.25v10z" class="logo-wall-r"/>
+          <path d="M19 10l4.5 2.25v5L19 15z" class="logo-win"/>
+        </svg>
+        <span>Atelier</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Main">
+        <a href="projects.html" class="active" aria-current="page">My projects</a>
+        <a href="index.html#homes">Ideas</a>
+        <a href="index.html#faq">Help</a>
+        <div class="nav-actions-mobile"></div>
+      </nav>
+
+      <div class="nav-actions"></div>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="container dash">
+    <!-- Greeting -->
+    <section class="dash-head">
+      <div>
+        <p class="dash-date" id="today"></p>
+        <h1 id="greeting">Welcome back</h1>
+        <p class="dash-lead">Pick up where you left off, or start a new home.</p>
+      </div>
+      <button class="btn btn-primary btn-large" type="button" data-new-project>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14 M5 12h14"/></svg>
+        New project
+      </button>
+    </section>
+
+    <!-- Totals across every project -->
+    <ul class="stats" aria-label="Your totals">
+      <li class="stat">
+        <span class="stat-icon tone-clay" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg></span>
+        <span class="stat-text"><strong data-stat="projects">0</strong><span>projects</span></span>
+      </li>
+      <li class="stat">
+        <span class="stat-icon tone-sand" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M3 5h18v14H3z M3 12h9 M12 5v14"/></svg></span>
+        <span class="stat-text"><strong data-stat="area">0 m²</strong><span>planned floor area</span></span>
+      </li>
+      <li class="stat">
+        <span class="stat-icon tone-sage" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 18v-5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5 M6 11V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3 M4 18h16 M6 18v2 M18 18v2"/></svg></span>
+        <span class="stat-text"><strong data-stat="items">0</strong><span>pieces placed</span></span>
+      </li>
+      <li class="stat">
+        <span class="stat-icon tone-stone" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6h15l-1.5 8.5a2 2 0 0 1-2 1.5H9a2 2 0 0 1-2-1.6L5 3H3 M9 20.5h.01 M17 20.5h.01"/></svg></span>
+        <span class="stat-text"><strong data-stat="budget">€0</strong><span>total shopping list</span></span>
+      </li>
+    </ul>
+
+    <!-- Search, filter, sort -->
+    <div class="dash-toolbar" id="dash-toolbar">
+      <div class="search">
+        <label for="search" class="sr-only">Search your projects</label>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search your projects" autocomplete="off">
+      </div>
+      <div class="segmented" role="group" aria-label="Show">
+        <button type="button" class="seg-btn" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="seg-btn" data-filter="favorites" aria-pressed="false">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>Favourites
+        </button>
+      </div>
+      <div class="select-wrap">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="edited">Last edited</option>
+          <option value="name">Name (A–Z)</option>
+          <option value="area">Biggest first</option>
+          <option value="budget">Highest budget</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="results-note" id="results-note" role="status" aria-live="polite"></p>
+    <div class="project-grid" id="project-grid"></div>
+
+    <!-- First visit: no projects yet -->
+    <section class="empty" id="empty" hidden>
+      <div class="empty-art" aria-hidden="true">
+        <svg viewBox="0 0 120 90"><rect x="10" y="12" width="60" height="44" rx="4" class="e-room"/><rect x="70" y="12" width="40" height="66" rx="4" class="e-room alt"/><rect x="10" y="56" width="60" height="22" rx="4" class="e-room"/><path d="M22 30h24 M22 30v14" class="e-line"/><circle cx="92" cy="44" r="10" class="e-plus"/><path d="M92 39v10 M87 44h10" class="e-plus-line"/></svg>
+      </div>
+      <h2>Your first room starts here</h2>
+      <p>Pick a furnished room to explore in 3D, or <button type="button" class="link-btn" data-build>build your own to size</button>.</p>
+      <div class="template-row rooms-grid" id="empty-templates"></div>
+    </section>
+
+    <section class="shop-section" id="shopping" aria-labelledby="shop-heading" hidden>
+      <div class="shop-head">
+        <div>
+          <p class="eyebrow-small">What to buy</p>
+          <h2 id="shop-heading">Shopping list</h2>
+          <p class="dash-lead">Every piece in your home, where to buy it and what it costs.</p>
+        </div>
+        <div class="shop-controls">
+          <label for="shop-project" class="sr-only">Project</label>
+          <div class="select-wrap"><select id="shop-project"></select></div>
+          <button type="button" class="mini-btn" id="shop-copy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>Copy</button>
+          <button type="button" class="mini-btn" id="shop-download"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</button>
+          <button type="button" class="mini-btn" id="shop-print"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9V3h10v6 M7 17H4v-7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v7h-3 M7 14h10v7H7z"/></svg>Print</button>
+        </div>
+      </div>
+      <div id="shop-body"></div>
+    </section>
+  </main>
+
+  <!-- ================= Dialogs ================= -->
+
+  <!-- New project -->
+  <dialog class="dialog" id="new-dialog" aria-labelledby="new-title">
+    <form method="dialog" class="dialog-form" id="new-form" novalidate>
+      <header class="dialog-head">
+        <h2 id="new-title">New project</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"/></svg></button>
+      </header>
+      <div class="app-field">
+        <label for="new-name">Name your project</label>
+        <input id="new-name" name="name" type="text" maxlength="60" placeholder="e.g. Our flat in Lyon" autocomplete="off" required aria-describedby="new-name-error">
+        <p class="app-error" id="new-name-error" hidden></p>
+      </div>
+      <div class="segmented start-switch" role="tablist" aria-label="How to start">
+        <button type="button" class="seg-btn" role="tab" data-start="choose" aria-selected="true" aria-pressed="true">Choose a room</button>
+        <button type="button" class="seg-btn" role="tab" data-start="build" aria-selected="false" aria-pressed="false">Build your own</button>
+      </div>
+
+      <!-- Choose a ready room, furnished or empty -->
+      <fieldset class="template-pick" id="start-choose">
+        <legend class="pick-legend">
+          <span>Pick a room</span>
+          <span class="segmented small" role="group" aria-label="Furniture">
+            <button type="button" class="seg-btn" data-furnished="yes" aria-pressed="true">Furnished</button>
+            <button type="button" class="seg-btn" data-furnished="no" aria-pressed="false">Empty</button>
+          </span>
+        </legend>
+        <div class="template-row rooms-grid" id="new-templates"></div>
+      </fieldset>
+
+      <!-- Build a room to your own measurements -->
+      <div class="build" id="start-build" hidden>
+        <p class="app-hint">Type your room's real measurements. It starts empty, with a door and a window you can move.</p>
+        <div class="app-field">
+          <label for="build-type">Room type</label>
+          <select id="build-type" class="plain-select"></select>
+        </div>
+        <div class="build-grid">
+          <div class="app-field"><label for="build-w">Width</label><div class="unit-input"><input id="build-w" type="number" inputmode="decimal" min="1" max="30" step="0.1" value="4"><span>m</span></div></div>
+          <div class="app-field"><label for="build-h">Length</label><div class="unit-input"><input id="build-h" type="number" inputmode="decimal" min="1" max="30" step="0.1" value="3.5"><span>m</span></div></div>
+          <div class="app-field"><label for="build-ceiling">Ceiling</label><div class="unit-input"><input id="build-ceiling" type="number" inputmode="decimal" min="2" max="5" step="0.05" value="2.6"><span>m</span></div></div>
+        </div>
+        <p class="build-area" id="build-area" aria-live="polite"></p>
+      </div>
+      <footer class="dialog-foot">
+        <button type="button" class="btn btn-secondary" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Create and open</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Rename -->
+  <dialog class="dialog dialog-small" id="rename-dialog" aria-labelledby="rename-title">
+    <form method="dialog" class="dialog-form" id="rename-form" novalidate>
+      <header class="dialog-head">
+        <h2 id="rename-title">Rename project</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"/></svg></button>
+      </header>
+      <div class="app-field">
+        <label for="rename-name">New name</label>
+        <input id="rename-name" name="name" type="text" maxlength="60" autocomplete="off" required aria-describedby="rename-error">
+        <p class="app-error" id="rename-error" hidden></p>
+      </div>
+      <footer class="dialog-foot">
+        <button type="button" class="btn btn-secondary" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save name</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Delete -->
+  <dialog class="dialog dialog-small" id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-text">
+    <form method="dialog" class="dialog-form" id="delete-form">
+      <div class="dialog-warn" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16 M9 7V4.5h6V7 M6.5 7l1 13h9l1-13"/></svg></div>
+      <h2 id="delete-title">Delete this project?</h2>
+      <p id="delete-text"><strong data-name></strong> and everything in it will be removed. You can undo this for a few seconds.</p>
+      <footer class="dialog-foot">
+        <button type="button" class="btn btn-secondary" data-close>Keep it</button>
+        <button type="submit" class="btn btn-danger">Delete project</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Account settings -->
+  <dialog class="dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <div class="dialog-form">
+      <header class="dialog-head">
+        <h2 id="settings-title">Account settings</h2>
+        <button type="button" class="icon-btn" data-close aria-label="Close"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12 M18 6L6 18"/></svg></button>
+      </header>
+
+      <form class="settings-block" id="name-form" novalidate>
+        <h3>Your name</h3>
+        <div class="app-field">
+          <label for="set-name">Name</label>
+          <div class="inline-input">
+            <input id="set-name" name="name" type="text" maxlength="60" autocomplete="name" required aria-describedby="set-name-error">
+            <button type="submit" class="btn btn-secondary btn-small">Save</button>
+          </div>
+          <p class="app-error" id="set-name-error" hidden></p>
+        </div>
+        <p class="settings-meta">Email: <strong data-email></strong> · Member since <span data-since></span></p>
+      </form>
+
+      <form class="settings-block" id="password-form" novalidate>
+        <h3>Change password</h3>
+        <div class="app-field">
+          <label for="current">Current password</label>
+          <input id="current" name="current" type="password" autocomplete="current-password" required aria-describedby="current-error">
+          <p class="app-error" id="current-error" hidden></p>
+        </div>
+        <div class="app-field">
+          <label for="new-password">New password</label>
+          <input id="new-password" name="next" type="password" autocomplete="new-password" required aria-describedby="new-password-hint new-password-error">
+          <p class="app-hint" id="new-password-hint">At least 8 characters, with a letter and a number.</p>
+          <p class="app-error" id="new-password-error" hidden></p>
+        </div>
+        <button type="submit" class="btn btn-secondary btn-small">Change password</button>
+      </form>
+
+      <form class="settings-block danger" id="delete-account-form" novalidate>
+        <h3>Delete account</h3>
+        <p>This removes your account and all <span data-count>0</span> of your projects from this browser. It can't be undone.</p>
+        <div class="app-field">
+          <label for="delete-password">Type your password to confirm</label>
+          <input id="delete-password" name="password" type="password" autocomplete="current-password" required aria-describedby="delete-password-error">
+          <p class="app-error" id="delete-password-error" hidden></p>
+        </div>
+        <button type="submit" class="btn btn-danger btn-small">Delete my account</button>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="toast-region" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/regions.js?v=6"></script>
+  <script src="js/catalog.js?v=28"></script>
+  <script src="js/projects-store.js?v=12"></script>
+  <script src="js/share.js?v=1"></script>
+  <script src="js/trace-store.js?v=1"></script>
+  <script src="js/shopping-pdf.js?v=71"></script>
+  <script src="js/app.js?v=4"></script>
+  <script src="js/account-ui.js?v=3"></script>
+  <script src="js/select.js?v=2"></script>
+  <!-- Only used when you download the PDF: it draws the product pictures -->
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    } }
+  </script>
+  <script src="js/projects.js?v=13"></script>
+</body>
+</html>

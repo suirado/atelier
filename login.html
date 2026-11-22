@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in — Atelier</title>
+  <meta name="description" content="Log in to Atelier and continue designing your home.">
+  <meta name="theme-color" content="#1f4d43">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier">
+  <meta property="og:title" content="Log in — Atelier">
+  <meta property="og:description" content="Plan and furnish your home in 3D, right in your browser. Real sizes, real products, real prices.">
+  <meta property="og:image" content="assets/hero-render-1200.jpg">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=41">
+  <link rel="stylesheet" href="css/auth.css?v=7">
+  <link rel="stylesheet" href="css/theme.css?v=12">
+  <script src="js/theme.js?v=1"></script>
+  <script src="js/i18n-fr.js?v=1"></script>
+  <script src="js/i18n.js?v=2"></script>
+</head>
+<body class="auth-page">
+  <a href="#login-form" class="skip-link">Skip to the form</a>
+
+  <div class="auth">
+    <main class="auth-main" id="main">
+      <header class="auth-top">
+        <a href="index.html" class="logo" aria-label="Atelier home">
+          <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" class="logo-bg"/>
+          <path d="M16 26 5.5 20.75 16 15.5l10.5 5.25z" class="logo-floor"/>
+          <path d="M5.5 20.75v-10L16 5.5v10z" class="logo-wall-l"/>
+          <path d="M16 15.5v-10l10.5 5.25v10z" class="logo-wall-r"/>
+          <path d="M19 10l4.5 2.25v5L19 15z" class="logo-win"/>
+          </svg>
+          <span>Atelier</span>
+        </a>
+        <a href="index.html" class="auth-back" data-fr="Accueil">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5 M11 6l-6 6 6 6"/></svg>
+          Back to home
+        </a>
+      </header>
+
+      <div class="auth-card">
+        <div id="auth-intro">
+          <h1>Welcome back</h1>
+          <p class="auth-lead">Log in to open your projects right where you left them.</p>
+        </div>
+
+        <div class="error-summary" id="login-errors" role="alert" tabindex="-1" aria-labelledby="login-errors-title" hidden>
+          <h2 id="login-errors-title">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5 M12 16.5v.01"/></svg>
+            A few things to fix
+          </h2>
+          <ul></ul>
+        </div>
+
+        <form class="auth-form" id="login-form" data-summary="login-errors" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <div class="input-wrap">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="name@example.com" required aria-describedby="email-error">
+              <span class="field-status" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            </div>
+            <p class="field-error" id="email-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <div class="label-row">
+              <label for="password">Password</label>
+              <button class="link-button" type="button" id="forgot">Forgot password?</button>
+            </div>
+            <div class="input-wrap has-toggle">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              <input id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="password-error">
+              <button class="reveal" type="button" aria-controls="password" aria-pressed="false" aria-label="Show password">
+                <svg class="icon eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="icon eye-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18 M10.6 5.1A10 10 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.1 M6.6 6.6A17 17 0 0 0 2 12s3.5 7 10 7a9.7 9.7 0 0 0 5.4-1.6 M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+            </div>
+            <p class="caps-warning" hidden>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8h-4v6H8v-6H4z"/></svg>
+              Caps Lock is on
+            </p>
+            <p class="field-error" id="password-error" hidden></p>
+          </div>
+
+          <div class="check-wrap">
+            <label class="check" for="remember">
+              <input id="remember" name="remember" type="checkbox" checked>
+              <span>Keep me logged in on this device</span>
+            </label>
+          </div>
+
+          <button class="btn btn-primary auth-submit" type="submit" data-busy="Logging you in…">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="label">Log in</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+
+        <!-- Forgot password: same page, no reload -->
+        <section class="reset-panel" id="reset-panel" aria-labelledby="reset-title" hidden>
+          <h2 id="reset-title" tabindex="-1">Reset your password</h2>
+          <p>Enter the email you signed up with and we'll send you a link to choose a new password.</p>
+          <form class="auth-form" id="reset-form" novalidate>
+            <div class="field">
+              <label for="reset-email">Email</label>
+              <div class="input-wrap">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+                <input id="reset-email" name="reset-email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="name@example.com" required aria-describedby="reset-email-error">
+                <span class="field-status" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              </div>
+              <p class="field-error" id="reset-email-error" hidden></p>
+            </div>
+            <button class="btn btn-primary auth-submit" type="submit" data-busy="Sending…">
+              <span class="spinner" aria-hidden="true"></span>
+              <span class="label">Send reset link</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-2-6z"/></svg>
+            </button>
+          </form>
+          <p class="reset-sent" id="reset-sent" tabindex="-1" role="status" hidden>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>
+            <span>If an account exists for <strong data-email></strong>, a reset link is on its way. Check your inbox and spam folder. (Preview: no email is sent yet.)</span>
+          </p>
+          <button class="link-button back-to-login" type="button" id="back-to-login">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5 M11 6l-6 6 6 6"/></svg>
+            Back to log in
+          </button>
+        </section>
+
+        <div class="auth-done" id="auth-done" hidden>
+          <div class="done-badge" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </div>
+          <h2 tabindex="-1">You're logged in</h2>
+          <p>Good to see you again. Your projects are right where you left them.</p>
+          <a href="index.html" class="btn btn-primary btn-large">
+            Open my projects
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="preview-note">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5 M12 7.5v.01"/></svg>
+            <span>Atelier is still in preview, so nothing was checked or saved yet. Real accounts are coming soon.</span>
+          </p>
+        </div>
+
+        <p class="auth-switch">New to Atelier?<a href="signup.html">Create a free account</a></p>
+        <p class="auth-guest">Just looking?<a href="login.html?guest=1" data-guest>Try it without an account</a></p>
+      </div>
+
+      <p class="auth-foot">© 2026 Atelier · <a href="legal.html#privacy">Privacy</a> · <a href="legal.html#terms">Terms</a></p>
+    </main>
+
+    <aside class="auth-art" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="assets/hero-render-1200.webp 1200w, assets/hero-render.webp 2000w" sizes="50vw">
+        <img src="assets/hero-render-1200.jpg" alt="" width="1200" height="825" decoding="async">
+      </picture>
+      <span class="art-tag"><i></i>Saved to your account</span>
+      <div class="art-card">
+        <h2>Your projects are waiting</h2>
+        <div class="art-project">
+          <img src="assets/hero-render-1200.webp" alt="" width="64" height="46">
+          <div>
+            <strong>The Sunlit Dream Home</strong>
+            <span>160 m² · 4 rooms · 39 items</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/account.js?v=3" defer></script>
+  <script src="js/auth.js?v=5" defer></script>
+</body>
+</html>

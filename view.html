@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shared home — Atelier</title>
+  <meta name="description" content="A home planned with Atelier. Walk around it in 3D and make your own copy.">
+  <meta name="theme-color" content="#1f4d43">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atelier">
+  <meta property="og:title" content="A home planned with Atelier">
+  <meta property="og:description" content="Walk around it in 3D and make your own copy.">
+  <meta property="og:image" content="assets/hero-render-1200.jpg">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
+  <link rel="stylesheet" href="css/style.css?v=41">
+  <link rel="stylesheet" href="css/app.css?v=34">
+  <link rel="stylesheet" href="css/theme.css?v=12">
+  <script src="js/theme.js?v=1"></script>
+  <script src="js/i18n-fr.js?v=1"></script>
+  <script src="js/i18n.js?v=2"></script>
+  <script src="js/account.js?v=3"></script>
+</head>
+<body class="app-page editor-page viewer-page">
+  <header class="editor-bar">
+    <a href="index.html" class="logo" aria-label="Atelier home">
+      <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" class="logo-bg"/>
+          <path d="M16 26 5.5 20.75 16 15.5l10.5 5.25z" class="logo-floor"/>
+          <path d="M5.5 20.75v-10L16 5.5v10z" class="logo-wall-l"/>
+          <path d="M16 15.5v-10l10.5 5.25v10z" class="logo-wall-r"/>
+          <path d="M19 10l4.5 2.25v5L19 15z" class="logo-win"/>
+      </svg>
+    </a>
+    <div class="view-title">
+      <span class="view-chip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg>View only</span>
+      <h1 id="view-name">Shared home</h1>
+    </div>
+    <span class="spacer"></span>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost btn-small">Log in</a>
+    </div>
+  </header>
+
+  <main class="viewer" id="main">
+    <div class="canvas-wrap" data-mode="3d">
+      <div class="canvas-top">
+        <div class="canvas-tools" role="toolbar" aria-label="Camera">
+          <button type="button" class="tool-btn" data-cam="3d" title="Look at the whole home">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 4 0 1 0 18 0 9 4 0 1 0-18 0 M12 8v8"/></svg><span class="label">Overview</span>
+          </button>
+          <button type="button" class="tool-btn" data-cam="eye" title="Stand inside the home">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg><span class="label">Eye level</span>
+          </button>
+          <button type="button" class="tool-btn" id="walls-btn" title="Walls: lower the ones in front, show all, or lower all">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18 M5 20V9h5v11 M14 20v-5h5v5"/></svg><span class="label" id="walls-label">Walls: cut</span>
+          </button>
+        </div>
+      </div>
+      <div class="view3d" id="view3d"></div>
+      <p class="viewer-status" id="viewer-status" role="status">Loading the 3D view…</p>
+    </div>
+
+    <aside class="viewer-card" id="viewer-card" aria-labelledby="card-name" hidden>
+      <p class="eyebrow">Shared with you</p>
+      <h2 id="card-name"></h2>
+      <ul class="viewer-stats" id="viewer-stats"></ul>
+      <h3 class="viewer-sub">Rooms</h3>
+      <ul class="viewer-rooms" id="viewer-rooms"></ul>
+      <div class="viewer-cta">
+        <button type="button" class="btn btn-primary" id="copy-btn">
+          Make my own copy
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="pop-note">Free. It goes into your projects, where you can change anything. This plan stays as it is.</p>
+      </div>
+    </aside>
+  </main>
+
+  <div class="toast-region" id="toasts" role="status" aria-live="polite"></div>
+
+  <script src="js/regions.js?v=6"></script>
+  <script src="js/catalog.js?v=28"></script>
+  <script src="js/projects-store.js?v=12"></script>
+  <script src="js/share.js?v=1"></script>
+  <script src="js/app.js?v=4"></script>
+  <script src="js/account-ui.js?v=3"></script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    } }
+  </script>
+  <script type="module" src="js/view.js?v=3"></script>
+</body>
+</html>
